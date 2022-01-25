@@ -22,6 +22,7 @@ export const LocationProvider = ({ children }) => {
     longitude: 0,
   });
   const [showRoute, setShowRoute] = useState(false);
+  const [currentAppDistance, setCurrentAppDistance ] = useState(0);
   const {currentUser } = useAuth();
 
   const getRoute = async (destination) => {
@@ -33,6 +34,9 @@ export const LocationProvider = ({ children }) => {
     });
   };
 
+  const calculateMeters = (x1, y1, x2, y2) => {
+    return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2) * 111139;
+  };
   useEffect(() => {
     setDestinationLocation(destinationLocation);
     setShowRoute(showRoute);
@@ -54,7 +58,7 @@ export const LocationProvider = ({ children }) => {
           const info = {
             latitude: x,
             longitude: y,
-            timestamp: date
+            timestamp: date,
           };
           sendUserData(currentUser.displayName, info);
         })
@@ -68,7 +72,9 @@ export const LocationProvider = ({ children }) => {
     destinationLocation,
     showRoute,
     setShowRoute,
-    getRoute
+    getRoute,
+    currentAppDistance,
+    setCurrentAppDistance
   };
 
   return (

@@ -119,27 +119,29 @@ const styles = StyleSheet.create({
     left: "6%",
   },
   linearGradient: {
-    // flex: 1,
+    flex: 1,
     alignItems: "center",
     justifyContent: "flex-start",
     padding: 20,
+    height: 700
   },
   signUpContainter: {
     flex: 1,
     justifyContent: "flex-start",
+    alignItems: "center",
     alignContent: "stretch",
     top: "7%",
   },
   footerContainer: {
-    flex: 1,
+    // flex: 0.5,
     justifyContent: "center",
     alignItems: "center",
-    top: 20,
+    top: 35,
   },
   otherOptionsContainer: {
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "flex-end",
-    top: -30,
+    top: 20,
   },
 });

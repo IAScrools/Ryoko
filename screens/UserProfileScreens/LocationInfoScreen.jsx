@@ -44,7 +44,7 @@ export default LocationInfoScreen = ({ route }) => {
           <Image
             style={styles.avatar}
             source={{
-              uri: creatorAvatar,
+              uri: creatorAvatar ? creatorAvatar : "https://miro.medium.com/max/720/1*W35QUSvGpcLuxPo3SRTH4w.png"
             }}
           ></Image>
           <Text style={styles.nickname}>{creatorNickname}</Text>

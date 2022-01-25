@@ -27,7 +27,7 @@ const ShowCommentsScreen = ({ route }) => {
 
   return (
     <View style={{ flex: 1 }}>
-      <LinearGradient colors={["#ffdd00", "#eaa923"]} style={styles.header}>
+      <LinearGradient colors={["#F7F3E9", "#5EAAA8"]} style={styles.header}>
         <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
           <FontAwesome style={styles.arrow} name="arrow-left"></FontAwesome>
         </TouchableWithoutFeedback>

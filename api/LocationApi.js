@@ -19,12 +19,12 @@ export const getLocations = async () => {
 export const addLocations = async (title, description, uri, currentUser) => {
   if (title === "" || description === "") {
     alert("Title or description is empty!");
-    return;
+    return false;
   }
 
   if (!uri) {
     alert("Photo must be taken!");
-    return;
+    return false;
   }
 
   console.log(currentUser);
@@ -53,12 +53,15 @@ export const addLocations = async (title, description, uri, currentUser) => {
   await locations
     .add(marker)
     .then(() => {
-      alert("Location added succesfull!");
       db.collection("stats")
         .doc(currentUser.displayName)
         .update({ addedPlaces: firebase.firestore.FieldValue.increment(1) });
     })
-    .catch((err) => alert(err.message));
+    .catch((err) => {
+      alert(err.message);
+      return false;
+    });
+    return true;
 };
 
 export const getRates = (id) => {};
@@ -79,7 +82,7 @@ export const incrementVisited = async (username) => {
     .collection("stats")
     .doc(username)
     .update({
-      visitedPlaces: firebase.firestore.FieldValue.increment(1)
+      visitedPlaces: firebase.firestore.FieldValue.increment(1),
     });
 };
 

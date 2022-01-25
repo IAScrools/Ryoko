@@ -16,6 +16,7 @@ import { addLocations } from "../../api/LocationApi";
 import * as ImagePicker from "expo-image-picker";
 import * as ImageManipulator from "expo-image-manipulator";
 import { useAuth } from "../../context/authContext";
+import ModalWithoutButtons from "../../components/Main/ModalWithoutButtons";
 
 const { width, height } = Dimensions.get("window");
 
@@ -23,7 +24,9 @@ export default AddLocationScreen = (props) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
-  const {currentUser} = useAuth();
+  const [modal, setModal] = useState(false);
+  
+  const { currentUser } = useAuth();
 
   const navigation = useNavigation();
 
@@ -43,7 +46,6 @@ export default AddLocationScreen = (props) => {
     console.log("Manipulated");
     console.log(resizedPhoto);
 
-
     if (!result.cancelled) {
       setImage(resizedPhoto.uri);
     }
@@ -51,11 +53,20 @@ export default AddLocationScreen = (props) => {
 
   return (
     <View style={styles.container}>
+      <ModalWithoutButtons
+        isVisible={modal}
+        title="Success! 🥳"
+        description="Image added successfuly!"
+        onPress={() => {
+          setModal(!modal);
+          navigation.goBack();
+        }}
+      />
       <LinearGradient
         style={styles.linearGradient}
-        colors={["#F7F3E9", "#5EAAA8"]}
-        start={{ x: "0%", y: "0%" }}
-        end={{ x: "25%", y: "25%" }}
+        colors={["#A3D2CA", "#5EAAA8"]}
+        start={{ x: "55%", y: "55%" }}
+        end={{ x: "100%", y: "100%" }}
       >
         <Text style={styles.headerText}>Add location</Text>
       </LinearGradient>
@@ -119,8 +130,8 @@ export default AddLocationScreen = (props) => {
           onChangeText={(text) => setDescription(text)}
         />
         <TouchableOpacity
-          onPress={() => {
-           addLocations(title, description, image, currentUser);
+          onPress={async () => {
+            setModal(await addLocations(title, description, image, currentUser));
           }}
         >
           <View style={styles.addButton}>
