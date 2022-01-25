@@ -41,6 +41,9 @@ export const LocationProvider = ({ children }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       console.log("This will run every one second");
+      if(currentUser == null) {
+        return;
+      }
       const current = Location.getCurrentPositionAsync()
         .then((data) => {
           const currentDate = new Date();

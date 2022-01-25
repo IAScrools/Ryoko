@@ -53,9 +53,9 @@ export default AddLocationScreen = (props) => {
     <View style={styles.container}>
       <LinearGradient
         style={styles.linearGradient}
-        colors={["#ffdd00", "#eaa923"]}
-        start={{ x: "55%", y: "55%" }}
-        end={{ x: "100%", y: "100%" }}
+        colors={["#F7F3E9", "#5EAAA8"]}
+        start={{ x: "0%", y: "0%" }}
+        end={{ x: "25%", y: "25%" }}
       >
         <Text style={styles.headerText}>Add location</Text>
       </LinearGradient>

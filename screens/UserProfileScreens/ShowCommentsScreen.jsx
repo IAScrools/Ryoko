@@ -48,7 +48,7 @@ const ShowCommentsScreen = ({ route }) => {
                   style={comment.isPositive ? styles.thumbUp : styles.thumbDown}
                 ></FontAwesome>
               <View
-                colors={["#ffdd00", "#eaa923"]}
+                colors={["#F7F3E9", "#5EAAA8"]}
                 style={styles.commentHeader}
               >
                 <Image

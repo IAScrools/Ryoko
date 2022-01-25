@@ -145,7 +145,7 @@ const UserProfileScreen = (props) => {
             onPress={() => navigation.navigate("Add Location")}
           >
             <LinearGradient
-              colors={["#ffdd00", "#eaa923"]}
+              colors={["#A3D2CA", "#5EAAA8"]}
               style={styles.addBtn}
             >
               <FontAwesome5
@@ -231,17 +231,9 @@ const styles = StyleSheet.create({
     height: 100,
     width: 100,
     borderRadius: 360,
-    top: "-12%",
+    top: "-6%",
     textAlign: "center",
     justifyContent: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 8,
-    },
-    shadowOpacity: 0.57,
-    shadowRadius: 7.49,
-
     elevation: 16,
   },
   modal: {

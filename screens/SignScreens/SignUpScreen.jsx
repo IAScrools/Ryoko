@@ -37,7 +37,7 @@ const SignUpScreen = () => {
   return (
     <ScrollView onPress={Keyboard.dismiss}>
       <LinearGradient
-        colors={["#ffdd00", "#eaa923"]}
+        colors={["#F7F3E9", "#5EAAA8"]}
         useAngle={true}
         angle={45}
         angleCenter={{ x: 0.5, y: 0.5 }}
@@ -101,7 +101,7 @@ const SignUpScreen = () => {
           <ExternalSignButton
             name="google"
             onPress={googleLogIn}
-            colors={["#ED213A", "#93291E"]}
+            colors={["#F7F3E9", "#5EAAA8"]}
             text="Sign Up with Google"
           />
         </View>

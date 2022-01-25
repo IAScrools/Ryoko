@@ -6,7 +6,7 @@ import { View, Text } from "react-native";
 export const CustomMarker = (props) => {
   return (
     <View>
-      <FontAwesome size={52} name="map-marker" color="orange"></FontAwesome>
+      <FontAwesome size={52} name="map-marker" color="#5EAAA8"></FontAwesome>
       
     </View>
   );

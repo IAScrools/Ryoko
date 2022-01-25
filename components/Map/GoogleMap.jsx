@@ -98,7 +98,7 @@ const GoogleMap = ({ route }, props) => {
               >
                 <View>
                   <LinearGradient
-                    colors={["#ffdd00", "#eaa923"]}
+                    colors={["#A3D2CA", "#5EAAA8"]}
                     style={styles.callout}
                   >
                     <Text style={styles.name}>{marker.title}</Text>

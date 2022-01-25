@@ -23,7 +23,7 @@ export default LocationInfoScreen = ({ route }) => {
   return (
     <ScrollView>
       <LinearGradient
-        colors={["#ffdd00", "#eaa923"]}
+        colors={["#F7F3E9", "#5EAAA8"]}
         useAngle={true}
         angle={45}
         angleCenter={{ x: 0.5, y: 0.5 }}

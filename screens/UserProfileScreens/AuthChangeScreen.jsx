@@ -58,7 +58,7 @@ const AuthChangeScreen = ({route}) => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <LinearGradient
-        colors={darkModeOn ? ["#000000", "#1f1f1f"] : ["#ffdd00", "#eaa923"]}
+        colors={darkModeOn ? ["#000000", "#1f1f1f"] : ["#F7F3E9", "#5EAAA8"]}
         useAngle={true}
         angle={45}
         angleCenter={{ x: 0.5, y: 0.5 }}
