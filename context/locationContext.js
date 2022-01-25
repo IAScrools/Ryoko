@@ -2,6 +2,9 @@ import { getCurrentPositionAsync } from "expo-location";
 import React from "react";
 import { createContext, useContext, useState, useEffect } from "react";
 import * as Location from "expo-location";
+import { db } from "../config/firebase";
+import { sendUserData } from "../api/UserApi";
+import { useAuth } from "./authContext";
 
 const LocationContext = createContext();
 
@@ -19,6 +22,7 @@ export const LocationProvider = ({ children }) => {
     longitude: 0,
   });
   const [showRoute, setShowRoute] = useState(false);
+  const {currentUser } = useAuth();
 
   const getRoute = async (destination) => {
     await Location.getCurrentPositionAsync({}).then((data) => {
@@ -34,12 +38,34 @@ export const LocationProvider = ({ children }) => {
     setShowRoute(showRoute);
   }, [showRoute]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      console.log("This will run every one second");
+      const current = Location.getCurrentPositionAsync()
+        .then((data) => {
+          const currentDate = new Date();
+          const date = currentDate.toUTCString();
+
+          console.log(date);
+          const { latitude: x, longitude: y } = data.coords;
+          const info = {
+            latitude: x,
+            longitude: y,
+            timestamp: date
+          };
+          sendUserData(currentUser.displayName, info);
+        })
+        .catch((err) => alert(err.message));
+    }, 5000);
+    return () => clearInterval(interval);
+  });
+
   const values = {
     originLocation,
     destinationLocation,
     showRoute,
     setShowRoute,
-    getRoute,
+    getRoute
   };
 
   return (

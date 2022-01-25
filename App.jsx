@@ -41,11 +41,11 @@ const App = () => {
 
   return (
     <IsDarkModeOn.Provider value={darkModeOn}>
-      <LocationProvider>
-        <AuthProvider>
+      <AuthProvider>
+        <LocationProvider>
           <Router />
-        </AuthProvider>
-      </LocationProvider>
+        </LocationProvider>
+      </AuthProvider>
     </IsDarkModeOn.Provider>
   );
 };

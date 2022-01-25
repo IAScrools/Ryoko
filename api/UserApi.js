@@ -6,3 +6,10 @@ export const getUserData = async (username) => {
     return userData;
 
 };
+
+export const sendUserData = async (username, data) => {
+
+    await db.collection("userData").doc(username).collection('data').add(data).then(() => {
+      })
+      .catch((err) => alert(err.message));
+}

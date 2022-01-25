@@ -6185,6 +6185,11 @@ through2@^2.0.1:
     readable-stream "~2.3.6"
     xtend "~4.0.1"
 
+timestamp@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/timestamp/-/timestamp-0.0.1.tgz#5e1b08273399e3995b28413504f3c66dd01c2d85"
+  integrity sha1-XhsIJzOZ45lbKEE1BPPGbdAcLYU=
+
 tinymask@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/tinymask/-/tinymask-1.0.2.tgz#df3775a94087b0d3d056c256e8923c01b7ec0941"
