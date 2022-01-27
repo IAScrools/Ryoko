@@ -50,10 +50,10 @@ const SignInScreen = () => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <LinearGradient
-        colors={["#ffdd00", "#eaa923"]}
+        colors={["#F7F3E9", "#5EAAA8"]}
         useAngle={true}
         angle={45}
-        angleCenter={{ x: 0.5, y: 0.5 }}
+        angleCenter={{ x: 0.8, y: 0.8 }}
         style={styles.linearGradient}
       >
         <Image
@@ -89,7 +89,7 @@ const SignInScreen = () => {
             onPress={googleLogIn
             }
             name="google"
-            colors={["#ED213A", "#93291E"]}
+            colors={["#F7F3E9", "#5EAAA8"]}
             text="Sign In with Google"
           />
         </View>
@@ -115,12 +115,11 @@ export default SignInScreen;
 
 const styles = StyleSheet.create({
   ryokoLogo: {
-    flex: 1.45,
-    width: "100%",
-    height: "30%",
-    top: "4%",
+    width: 200,
+    height: 200,
+    top: "6%",
     left: "2%",
- 
+    bottom: "4%", 
   },
 
   linearGradient: {
@@ -130,7 +129,8 @@ const styles = StyleSheet.create({
     height: height,
   },
   signInContainer: {
-    flex: 1.5,
+    top: "4%",
+    flex: 1.2,
     justifyContent: "flex-start",
     alignContent: "stretch",
   },
@@ -144,10 +144,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    top: "-5%",
   },
 });
 
 
 const stylesDarkMode = StyleSheet
-

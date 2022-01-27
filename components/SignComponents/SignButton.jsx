@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     borderRadius: 360,
     height: 61,
     width: 180,
+    top: 25
   },
   text: {
     color: "white",

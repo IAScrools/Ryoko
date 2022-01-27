@@ -37,7 +37,7 @@ const SignUpScreen = () => {
   return (
     <ScrollView onPress={Keyboard.dismiss}>
       <LinearGradient
-        colors={["#ffdd00", "#eaa923"]}
+        colors={["#F7F3E9", "#5EAAA8"]}
         useAngle={true}
         angle={45}
         angleCenter={{ x: 0.5, y: 0.5 }}
@@ -101,7 +101,7 @@ const SignUpScreen = () => {
           <ExternalSignButton
             name="google"
             onPress={googleLogIn}
-            colors={["#ED213A", "#93291E"]}
+            colors={["#F7F3E9", "#5EAAA8"]}
             text="Sign Up with Google"
           />
         </View>
@@ -119,27 +119,29 @@ const styles = StyleSheet.create({
     left: "6%",
   },
   linearGradient: {
-    // flex: 1,
+    flex: 1,
     alignItems: "center",
     justifyContent: "flex-start",
     padding: 20,
+    height: 700
   },
   signUpContainter: {
     flex: 1,
     justifyContent: "flex-start",
+    alignItems: "center",
     alignContent: "stretch",
     top: "7%",
   },
   footerContainer: {
-    flex: 1,
+    // flex: 0.5,
     justifyContent: "center",
     alignItems: "center",
-    top: 20,
+    top: 35,
   },
   otherOptionsContainer: {
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "flex-end",
-    top: -30,
+    top: 20,
   },
 });

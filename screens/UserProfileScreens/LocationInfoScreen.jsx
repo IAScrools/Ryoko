@@ -23,7 +23,7 @@ export default LocationInfoScreen = ({ route }) => {
   return (
     <ScrollView>
       <LinearGradient
-        colors={["#ffdd00", "#eaa923"]}
+        colors={["#F7F3E9", "#5EAAA8"]}
         useAngle={true}
         angle={45}
         angleCenter={{ x: 0.5, y: 0.5 }}
@@ -44,7 +44,7 @@ export default LocationInfoScreen = ({ route }) => {
           <Image
             style={styles.avatar}
             source={{
-              uri: creatorAvatar,
+              uri: creatorAvatar ? creatorAvatar : "https://miro.medium.com/max/720/1*W35QUSvGpcLuxPo3SRTH4w.png"
             }}
           ></Image>
           <Text style={styles.nickname}>{creatorNickname}</Text>
